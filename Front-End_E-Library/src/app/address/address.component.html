@@ -1,0 +1,70 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <span>E-Library Book</span>
+    <span class="example-spacer"></span>
+    <button name="openComponent" mat-raised-button color="warn" (click)="openDialog()">Add Address</button>
+  </mat-toolbar>
+  <div class="container">
+    <div style="margin-top: 10px;">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input name="find" matInput (keyup)="applyFilter($event)" placeholder="Ex. Door No" #input>
+      </mat-form-field>
+  
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="doorNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Door No </th>
+                <td mat-cell *matCellDef="let row"> {{row.doorNo}} </td>
+              </ng-container>
+  
+          <ng-container matColumnDef="street">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Street</th>
+            <td mat-cell *matCellDef="let row"> {{row.street}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+            <td mat-cell *matCellDef="let row"> {{row.city}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> State</th>
+            <td mat-cell *matCellDef="let row"> {{row.state}} </td>
+          </ng-container>
+  
+  
+          <ng-container matColumnDef="pincode">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> PinCode </th>
+            <td mat-cell *matCellDef="let row"> {{row.pincode}} </td>
+          </ng-container>  
+  
+          <ng-container matColumnDef="action" name="openComponent">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button (click)="editAddress(row)" color="primary" name="update">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button name="delete" (click)="deleteAddress(row)" mat-icon-button color="warn" >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+  
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+  
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,64 @@
+<div>
+    <mat-toolbar>
+        <span class="title-center">LOGIN</span>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" align="center">
+            <br><br>
+            <mat-card class="example-card">
+                <mat-card-content>
+                    <form [formGroup]="loginform">
+                        <table>
+                            <tr>
+                                <td><label class="la"><b>Email Id :</b></label></td>
+                                <td> 
+                                        <input type="text" class="form-control form-control" placeholder="Enter Email" aria-label="Name" matInput
+                                            formControlName="emailId">
+                                    <br>
+                                    <div *ngIf="loginform.get('emailId')!.touched && loginform.get('emailId')!.invalid">
+                                        <div *ngIf="loginform.get('emailId')!.hasError('required')">
+                                            <font color="red">*Email Id is required</font>
+                                        </div>
+                                        <div *ngIf="loginform.get('emailId')!.hasError('pattern')">
+                                            <font color="red">*Invalid EmailId</font>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><label class="la"><b>Password :</b></label></td>
+                                <td> 
+                                        <input type="password" class="form-control form-control" placeholder="Enter Password" aria-label="Password" matInput
+                                            formControlName="password">
+                                    <br>
+                                    <div
+                                        *ngIf="loginform.get('password')!.touched && loginform.get('password')!.invalid">
+                                        <div *ngIf="loginform.get('password')!.hasError('required')">
+                                            <font color="red">*Password required</font>
+                                        </div>
+                                        <div *ngIf="loginform.get('password')!.hasError('pattern')">
+                                            <font color="red">*Invalid Password</font>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <button  class="btn btn-warning" (click)="login(loginform.value)"
+                                        (click)="changediv()">Login</button>
+                            </tr>
+                            <br>
+                        </table>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

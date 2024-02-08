@@ -1,0 +1,87 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                        <form [formGroup]="registerform">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="userName" class="form-control form-control-lg"
+                                            formControlName="userName" />
+                                        <label class="form-label" for="userName">Enter User Name</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="emailId" class="form-control form-control-lg"
+                                            formControlName="emailId" />
+                                        <label class="form-label" for="emailId">Enter Email Id</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="mobileNumber" class="form-control form-control-lg"
+                                            formControlName="mobileNumber" />
+                                        <label class="form-label" for="mobileNumber">Enter Mobile Number</label>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+    
+                                        <div class="form-outline">
+                                            <input type="text" id="userType" class="form-control form-control-lg"
+                                                formControlName="userType" />
+                                            <label class="form-label" for="userType">Enter User Type</label>
+                                        </div>
+    
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="address" class="form-control form-control-lg"
+                                            formControlName="address" />
+                                        <label class="form-label" for="address">Enter Address</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="password" id="password" class="form-control form-control-lg"
+                                            formControlName="password" />
+                                        <label class="form-label" for="userPassword">Password</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <input class="btn btn-success btn-lg" routerLink="/Register" (click)="insert(registerform.value)"
+                                type="submit" value="Register" />
+                            </div>
+                            <div class="px-2">
+                                Already have an account? <a routerLink="/Login">Login to Here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<router-outlet></router-outlet>

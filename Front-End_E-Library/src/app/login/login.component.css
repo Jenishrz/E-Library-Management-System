@@ -1,0 +1,15 @@
+.title-center {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+   .mat-toolbar{
+    background-color: white
+   }
+   .example-card {
+    max-width: 500px;
+    background-color: #0095ff;
+  }
+  .card1{
+  max-width: 1000px;
+  }
+  
