@@ -27,10 +27,10 @@ public class LoginService {
 					return new Response("User Success");
 				}
 			} else {
-				return new Response("Login Fail");
+				return new Response("Login Success");
 			}
 		} else {
-			return new Response("Login Fail");
+			return new Response("Login Fails");
 		}
 
 	}
