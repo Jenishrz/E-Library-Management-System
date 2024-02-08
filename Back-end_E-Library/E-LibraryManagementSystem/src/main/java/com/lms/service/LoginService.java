@@ -22,15 +22,15 @@ public class LoginService {
 			if (value.equals(word)) {
 				String res = ref.getUserType();
 				if (res.equals("Admin")) {
-					return new Response("Admin Success");
+					return new Response("");
 				} else {
-					return new Response("User Success");
+					return new Response("");
 				}
 			} else {
-				return new Response("Login Fail");
+				return new Response("");
 			}
 		} else {
-			return new Response("Login Fail");
+			return new Response("");
 		}
 
 	}
